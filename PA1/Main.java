@@ -22,33 +22,32 @@ class Item {
 }
 
 class Player {
-    //Insert your code here.
-    private double money;
-    private List<Item> inventory;
+    private double money; // Player's total money
+    private List<Item> inventory; // Player's inventory
     public Player(double money){
         this.money = money;
         this.inventory = new ArrayList<Item>();
     }
-    public double getMoney(){
+    public double getMoney(){ // returns the amount of money player has
         return this.money;
     }
-    public List<Item> getItems(){
+    public List<Item> getItems(){ // returns the list of items player has
         return inventory;
     }
-    public boolean removeMoney(double price){
+    public boolean removeMoney(double price){ // deducts price amount of money from player returns false if player dosen't have enough money
         if(this.money-price>=0){
             this.money -= price;
             return true;
         }
         return false;
     }
-    public void addMoney(double amt){
+    public void addMoney(double amt){ // add amt money to total money
         this.money += amt;
     }
-    public void addItem(Item item){
+    public void addItem(Item item){ // add an item to the inventory
         inventory.add(item);
     }
-    public void removeItem(Item item){
+    public void removeItem(Item item){ // removes an item from inventory
         inventory.remove(item);
     }
     public Item getItemByName(String name) {
