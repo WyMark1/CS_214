@@ -22,11 +22,14 @@ class Item {
 }
 
 class Player {
+    private List<Item> body;
+    private Item hand; // What is in the players hand
     private double money; // Player's total money
     private List<Item> inventory; // Player's inventory
     public Player(double money){
         this.money = money;
         this.inventory = new ArrayList<Item>();
+        this.body = new ArrayList<Item>();
     }
     public double getMoney(){ // returns the amount of money player has
         return this.money;
@@ -58,6 +61,26 @@ class Player {
             }
         }
         return null; // Item not found in the player's inventory
+    }
+    public Item getHeldItem(){ 
+        return hand;
+    }
+    public List<Item> getItemsWorn(){
+        return body;
+    }
+    public void Eat(Item item){
+        inventory.remove(item);
+    }
+    public void Drink(Item item){
+        inventory.remove(item);
+    }
+    public void Wear(Item item){ // Puts item on body and removes from inventory
+        body.add(item);
+        inventory.remove(item);
+    }
+    public void Hold(Item item){ // Puts item in hand and removes from inventory
+        hand = item;
+        inventory.remove(item);
     }
 }                       
 
