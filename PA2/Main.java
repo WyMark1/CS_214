@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-//PA 1
+//PA 2
 
 class Item {
     private String name;
