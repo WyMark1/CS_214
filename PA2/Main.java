@@ -47,10 +47,10 @@ class Player {
     public void addMoney(double amt){ // add amt money to total money
         this.money += amt;
     }
-    public void addItem(Item item){ // add an item to the inventory
+    public void addItem(Item item){ // add an item to the inventory acquire item
         inventory.add(item);
     }
-    public void removeItem(Item item){ // removes an item from inventory
+    public void removeItem(Item item){ // removes an item from inventory relinquish
         inventory.remove(item);
     }
     public Item getItemByName(String name) {
@@ -68,6 +68,9 @@ class Player {
     public List<Item> getItemsWorn(){
         return body;
     }
+    public void Consume(Item item){
+        inventory.remove(item);
+    }
     public void Eat(Item item){
         inventory.remove(item);
     }
@@ -80,6 +83,10 @@ class Player {
     }
     public void Hold(Item item){ // Puts item in hand and removes from inventory
         hand = item;
+        inventory.remove(item);
+    }
+    public void Equip(Item item){ // Puts item on the players body and removes from inventory
+        body.add(item);
         inventory.remove(item);
     }
 }                       
