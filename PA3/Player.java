@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Player {
+class Player {
     private List<Item> body;
     private Item hand; // What is in the players hand
     private double money; // Player's total money
@@ -17,20 +17,20 @@ public class Player {
     public List<Item> getItems(){ // returns the list of items player has
         return inventory;
     }
-    public boolean removeMoney(double price){ // deducts price amount of money from player returns false if player dosen't have enough money
+    public boolean spendMoney(double price){ // deducts price amount of money from player returns false if player dosen't have enough money
         if(this.money-price>=0){
             this.money -= price;
             return true;
         }
         return false;
     }
-    public void addMoney(double amt){ // add amt money to total money
+    public void getMoney(double amt){ // add amt money to total money
         this.money += amt;
     }
-    public void addItem(Item item){ // add an item to the inventory
+    public void acquireItem(Item item){ // add an item to the inventory acquire item
         inventory.add(item);
     }
-    public void removeItem(Item item){ // removes an item from inventory
+    public void relinquishItem(Item item){ // removes an item from inventory relinquish
         inventory.remove(item);
     }
     public Item getItemByName(String name) {
@@ -48,10 +48,7 @@ public class Player {
     public List<Item> getItemsWorn(){
         return body;
     }
-    public void Eat(Item item){
-        inventory.remove(item);
-    }
-    public void Drink(Item item){
+    public void Consume(Item item){
         inventory.remove(item);
     }
     public void Wear(Item item){ // Puts item on body and removes from inventory
@@ -62,4 +59,8 @@ public class Player {
         hand = item;
         inventory.remove(item);
     }
-}                       
+    public void Equip(Item item){ // Puts item on the players body and removes from inventory
+        body.add(item);
+        inventory.remove(item);
+    }
+}       

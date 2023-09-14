@@ -37,20 +37,20 @@ class Player {
     public List<Item> getItems(){ // returns the list of items player has
         return inventory;
     }
-    public boolean removeMoney(double price){ // deducts price amount of money from player returns false if player dosen't have enough money
+    public boolean spendMoney(double price){ // deducts price amount of money from player returns false if player dosen't have enough money
         if(this.money-price>=0){
             this.money -= price;
             return true;
         }
         return false;
     }
-    public void addMoney(double amt){ // add amt money to total money
+    public void getMoney(double amt){ // add amt money to total money
         this.money += amt;
     }
-    public void addItem(Item item){ // add an item to the inventory acquire item
+    public void acquireItem(Item item){ // add an item to the inventory acquire item
         inventory.add(item);
     }
-    public void removeItem(Item item){ // removes an item from inventory relinquish
+    public void relinquishItem(Item item){ // removes an item from inventory relinquish
         inventory.remove(item);
     }
     public Item getItemByName(String name) {
@@ -69,16 +69,6 @@ class Player {
         return body;
     }
     public void Consume(Item item){
-        inventory.remove(item);
-    }
-    public void Eat(Item item){
-        inventory.remove(item);
-    }
-    public void Drink(Item item){
-        inventory.remove(item);
-    }
-    public void Wear(Item item){ // Puts item on body and removes from inventory
-        body.add(item);
         inventory.remove(item);
     }
     public void Hold(Item item){ // Puts item in hand and removes from inventory
@@ -157,9 +147,9 @@ class Store {
         }
         
         if (inventory.contains(item)) {
-            if (player.removeMoney(item.getPrice())) {
+            if (player.spendMoney(item.getPrice())) {
                 inventory.remove(item);
-                player.addItem(item);
+                player.acquireItem(item);
                 return true;
             }
         } else {
@@ -173,8 +163,8 @@ class Store {
             System.out.println("Player needs to enter the store before being able to sell anything");
             return false;
         }
-        player.removeItem(item);
-        player.addMoney(item.getPrice());
+        player.relinquishItem(item);
+        player.getMoney(item.getPrice());
         inventory.add(item);
         return true;
     }

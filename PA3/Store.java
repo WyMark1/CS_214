@@ -67,9 +67,9 @@ public class Store {
         }
         
         if (inventory.contains(item)) {
-            if (player.removeMoney(item.getPrice())) {
+            if (player.spendMoney(item.getPrice())) {
                 inventory.remove(item);
-                player.addItem(item);
+                player.acquireItem(item);
                 return true;
             }
         } else {
@@ -83,8 +83,8 @@ public class Store {
             System.out.println("Player needs to enter the store before being able to sell anything");
             return false;
         }
-        player.removeItem(item);
-        player.addMoney(item.getPrice());
+        player.relinquishItem(item);
+        player.getMoney(item.getPrice());
         inventory.add(item);
         return true;
     }
