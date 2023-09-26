@@ -27,7 +27,7 @@ class Player {
     public void getMoney(double amt){ // add amt money to total money
         this.money += amt;
     }
-    public void acquireItem(Item item){ // add an item to the inventory acquire item
+    public void acquire(Item item){ // add an item to the inventory acquire item
         inventory.add(item);
     }
     public void relinquishItem(Item item){ // removes an item from inventory relinquish
