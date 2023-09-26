@@ -23,44 +23,44 @@ class Item {
 
 class Player {
     private List<Item> body;
-    private Item hand; // What is in the players hand
-    private double money; // Player's total money
-    private List<Item> inventory; // Player's inventory
+    private Item hand; 
+    private double money; 
+    private List<Item> inventory; 
     public Player(double money){
         this.money = money;
         this.inventory = new ArrayList<Item>();
         this.body = new ArrayList<Item>();
     }
-    public double getMoney(){ // returns the amount of money player has
+    public double getMoney(){ 
         return this.money;
     }
-    public List<Item> getItems(){ // returns the list of items player has
+    public List<Item> getItems(){ 
         return inventory;
     }
-    public boolean removeMoney(double price){ // deducts price amount of money from player returns false if player dosen't have enough money
+    public boolean removeMoney(double price){ 
         if(this.money-price>=0){
             this.money -= price;
             return true;
         }
         return false;
     }
-    public void addMoney(double amt){ // add amt money to total money
+    public void addMoney(double amt){ 
         this.money += amt;
     }
-    public void addItem(Item item){ // add an item to the inventory
+    public void addItem(Item item){ 
         inventory.add(item);
     }
-    public void removeItem(Item item){ // removes an item from inventory
+    public void removeItem(Item item){ 
         inventory.remove(item);
     }
     public Item getItemByName(String name) {
-        // Iterate through the player's items and return the item with the matching name
+        
         for (Item item : inventory) {
             if (item.getName().equalsIgnoreCase(name)) {
                 return item;
             }
         }
-        return null; // Item not found in the player's inventory
+        return null; 
     }
     public Item getHeldItem(){ 
         return hand;
@@ -74,11 +74,11 @@ class Player {
     public void Drink(Item item){
         inventory.remove(item);
     }
-    public void Wear(Item item){ // Puts item on body and removes from inventory
+    public void Wear(Item item){ 
         body.add(item);
         inventory.remove(item);
     }
-    public void Hold(Item item){ // Puts item in hand and removes from inventory
+    public void Hold(Item item){ 
         hand = item;
         inventory.remove(item);
     }
