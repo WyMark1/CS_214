@@ -148,7 +148,7 @@ class Store {
         if (inventory.contains(item)) {
             if (player.spendMoney(item.getPrice())) {
                 inventory.remove(item);
-                player.acquireItem(item);
+                player.acquire(item);
                 return true;
             }
         } else {
