@@ -27,8 +27,14 @@ class Player {
     public void getMoney(double amt){ 
         this.money += amt;
     }
+    public void addItem(Item item){ 
+        inventory.add(item);
+    }
     public void acquire(Item item){ 
         inventory.add(item);
+    }
+    public void removeItem(Item item){ 
+        inventory.remove(item);
     }
     public void relinquishItem(Item item){ 
         inventory.remove(item);
