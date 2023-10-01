@@ -47,14 +47,16 @@ class Player {
     public void getMoney(double amt){ 
         this.money += amt;
     }
+    
+    @Deprecated
     public void addItem(Item item){ 
-        inventory.add(item);
     }
     public void acquire(Item item){ 
         inventory.add(item);
     }
+
+    @Deprecated
     public void removeItem(Item item){ 
-        inventory.remove(item);
     }
     public void relinquishItem(Item item){ 
         inventory.remove(item);
