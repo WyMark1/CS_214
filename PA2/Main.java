@@ -31,12 +31,15 @@ class Player {
         this.inventory = new ArrayList<Item>();
         this.body = new ArrayList<Item>();
     }
+    
     public double getMoney(){ 
         return this.money;
     }
+
     public List<Item> getItems(){ 
         return inventory;
     }
+
     public boolean spendMoney(double price){ 
         if(this.money-price>=0){
             this.money -= price;
@@ -44,23 +47,29 @@ class Player {
         }
         return false;
     }
+
     public void getMoney(double amt){ 
         this.money += amt;
     }
-    
+
     @Deprecated
     public void addItem(Item item){ 
+        acquire(item);
     }
+
     public void acquire(Item item){ 
         inventory.add(item);
     }
 
     @Deprecated
-    public void removeItem(Item item){ 
+    public void removeItem(Item item){
+        relinquishItem(item); 
     }
+
     public void relinquishItem(Item item){ 
         inventory.remove(item);
     }
+
     public Item getItemByName(String name) {
         for (Item item : inventory) {
             if (item.getName().equalsIgnoreCase(name)) {
