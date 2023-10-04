@@ -59,7 +59,10 @@ class Player {
     public List<Item> getItemsWorn(){
         return body;
     }
-    public void Consume(Item item){
+    public void Eat(Item item){
+        inventory.remove(item);
+    }
+    public void Drink(Item item){
         inventory.remove(item);
     }
     public void Wear(Item item){ 
@@ -68,10 +71,6 @@ class Player {
     }
     public void Hold(Item item){ 
         hand = item;
-        inventory.remove(item);
-    }
-    public void Equip(Item item){ 
-        body.add(item);
         inventory.remove(item);
     }
 }       
