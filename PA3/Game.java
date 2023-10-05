@@ -1,0 +1,63 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Game {
+    private String difficulty;
+    private Store store;
+    private Player player;
+
+    public Game(boolean makeItems, double startMoney){
+        difficulty  = "NA";
+        store = new Store();
+        if(makeItems){
+            makeItems(store);
+        }
+        player = new Player(startMoney);
+    }
+    
+    public void gamePlay(){
+        store.displayInventory();
+
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\nEnter a command (1 to enter the store, 4 to exit):");
+            String input = scanner.nextLine();
+
+            if (input.equals("1")) {
+                store.enter(player);
+                Store.storeMenu(scanner, store, player);
+                store.exit(player);
+            } else if (input.equals("4")) {
+                gameStop();
+                break;
+            } else {
+                System.out.println("Invalid command!");
+            }
+        }
+
+        scanner.close();
+    }
+
+    public static void gameStop(){
+        System.out.println("Exiting the program...");
+    }
+
+    public static void makeItems(Store store){
+        try{
+            File items = new File("Items.txt");
+            Scanner file = new Scanner(items);
+            while(file.hasNextLine()){
+                String data = file.nextLine();
+                String[] datasplit = data.split(" ");
+                Item item = new Item(datasplit[0],Float.parseFloat(datasplit[1]));
+                store.addItem(item);
+            }
+            file.close();
+        }
+        catch(FileNotFoundException e){
+            System.out.println("An error occurred.");
+        }
+    }
+}

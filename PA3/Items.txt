@@ -1,0 +1,15 @@
+Health_Potion 10.0
+Speed_Potion 10.0
+Strength_Potion 15.0
+Poison_Potion 20.0
+Broad_Sword 25.0
+Axe 25.0
+Staff 25.0
+Bow 25.0
+Arrow .5
+Pickaxe 20.0
+Shirt 10.0
+Pants 10.0
+Shoes 5.0
+Hat 10.0
+Chestplate 50.0
