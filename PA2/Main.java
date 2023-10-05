@@ -94,10 +94,18 @@ class Player {
         body.add(item);
         inventory.remove(item);
     }
+    public void Consume(Item item){
+        inventory.remove(item);
+    }
     public void Hold(Item item){ 
         hand = item;
         inventory.remove(item);
     }
+    public void Equip(Item item){ 
+        body.add(item);
+        inventory.remove(item);
+    }
+    
 }                       
 
 class Store {
