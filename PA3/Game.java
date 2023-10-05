@@ -15,7 +15,18 @@ public class Game {
         }
         player = new Player(startMoney);
     }
-    
+    public void exposeGameSetup(){
+        System.out.println("Makes difficulty NA for now Then makes store then calls makeItems then makes player");
+    }
+
+    public void exposeGamePlay(){
+        System.out.println("Shows the store inventory then allows the user to interacte with the store menu");
+    }
+
+    public void exposeGameStop(){
+        System.out.println("For now just prints exiting program");
+    }
+
     public void gamePlay(){
         store.displayInventory();
 
@@ -40,7 +51,7 @@ public class Game {
         scanner.close();
     }
 
-    public static void gameStop(){
+    public void gameStop(){
         System.out.println("Exiting the program...");
     }
 
