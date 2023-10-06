@@ -1,0 +1,19 @@
+Health_Potion 10.0 Potion
+Speed_Potion 10.0 Potion
+Strength_Potion 15.0 Potion
+Poison_Potion 20.0 Potion
+Bread 5.0 Food 1
+Soup 10.0 Food 5
+Steak 20.0 Food 10
+Poison_Potato 3.0 Food 10
+Broad_Sword 25.0 Weapon
+Axe 25.0 Weapon
+Staff 25.0 Weapon
+Bow 25.0 Weapon
+Arrow .5 Weapon
+Pickaxe 20.0 Weapon
+Shirt 10.0 Clothes
+Pants 10.0 Clothes
+Shoes 5.0 Clothes
+Hat 10.0 Clothes
+Chestplate 50.0 Clothes
