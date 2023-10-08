@@ -16,17 +16,6 @@ public class Game {
         }
         player = new Player(startMoney);
     }
-    public void exposeGameSetup(){
-        System.out.println("Makes difficulty NA for now Then makes store then calls makeItems then makes player");
-    }
-
-    public void exposeGamePlay(){
-        System.out.println("Shows the store inventory then allows the user to interacte with the store menu");
-    }
-
-    public void exposeGameStop(){
-        System.out.println("For now just prints exiting program");
-    }
 
     public void gamePlay(){
         store.displayInventory();
@@ -34,7 +23,7 @@ public class Game {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("\nEnter a command (1 to enter the store, 2 to view Inventory, 3 to Consume an Item, 4 to exit, 5 to View All stats):");
+            System.out.println("\nEnter a command (1 to enter the store, 2 to view Inventory, 3 to Consume an Item, 4 to exit,\n 5 to Equip an item, 6 to unequip an Item, 7 to View All stats):");
             String input = scanner.nextLine();
 
             if (input.equals("1")) {
@@ -54,6 +43,14 @@ public class Game {
                 gameStop();
                 break;
             } else if (input.equals("5")) {
+                System.out.println("Write the name of the Item to be Equiped");
+                input = scanner.nextLine();
+                player.Equip(player.getItemByName(input));
+            } else if (input.equals("6")) {
+                System.out.println("Write the name of the Item to be unequiped");
+                input = scanner.nextLine();
+                player.unEquip(player.getItemByName(input));
+            } else if (input.equals("7")) {
                 System.out.println(player);
             } else {
                 System.out.println("Invalid command!");
@@ -67,6 +64,9 @@ public class Game {
         System.out.println("Exiting the program...");
     }
 
+    public Player getPlayer(){
+        return player;
+    }
     public static void makeItems(Store store){
         try{
             File items = new File("Items.txt");
@@ -74,14 +74,21 @@ public class Game {
             while(file.hasNextLine()){
                 String data = file.nextLine();
                 String[] datasplit = data.split(" ");
+                if(datasplit[0].contains("_")){
+                    datasplit[0] = datasplit[0].substring(0, datasplit[0].indexOf("_")) + " " + datasplit[0].substring(datasplit[0].indexOf("_")+1, datasplit[0].length()); 
+                }
                 if(datasplit[2].equals("Potion")){
                     Item potion = new Potion(datasplit[0], Double.parseDouble(datasplit[1]));
-                    System.out.println(potion instanceof Potion);
                     store.addItem(potion);
                 } else if(datasplit[2].equals("Food")){
                     Item food = new Food(datasplit[0], Double.parseDouble(datasplit[1]), Integer.parseInt(datasplit[3]));
-                    System.out.println(food instanceof Food);
                     store.addItem(food);
+                } else if(datasplit[2].equals("Weapon")){
+                    Item weapon = new Weapon(datasplit[0], Double.parseDouble(datasplit[1]), Integer.parseInt(datasplit[3]));
+                    store.addItem(weapon);
+                } else if(datasplit[2].equals("Clothes")){
+                    Item clothes = new Clothes(datasplit[0], Double.parseDouble(datasplit[1]), Integer.parseInt(datasplit[3]));
+                    store.addItem(clothes);
                 } else{
                     Item item = new Item(datasplit[0], Double.parseDouble(datasplit[1]));
                     store.addItem(item);

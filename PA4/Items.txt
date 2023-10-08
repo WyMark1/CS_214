@@ -6,14 +6,14 @@ Bread 5.0 Food 1
 Soup 10.0 Food 5
 Steak 20.0 Food 10
 Poison_Potato 3.0 Food 10
-Broad_Sword 25.0 Weapon
-Axe 25.0 Weapon
-Staff 25.0 Weapon
-Bow 25.0 Weapon
-Arrow .5 Weapon
-Pickaxe 20.0 Weapon
-Shirt 10.0 Clothes
-Pants 10.0 Clothes
-Shoes 5.0 Clothes
-Hat 10.0 Clothes
-Chestplate 50.0 Clothes
+Broad_Sword 25.0 Weapon 20
+Axe 25.0 Weapon 15
+Staff 25.0 Weapon 5
+Bow 25.0 Weapon 10
+Arrow .5 Weapon 1
+Pickaxe 20.0 Weapon 7
+Shirt 10.0 Clothes 1
+Pants 10.0 Clothes 1
+Shoes 5.0 Clothes 1
+Hat 10.0 Clothes 1
+Chestplate 50.0 Clothes 10
