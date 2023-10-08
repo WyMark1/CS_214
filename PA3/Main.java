@@ -1,4 +1,3 @@
-import java.util.Scanner;
 //PA 3
 
 public class Main {

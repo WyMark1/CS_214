@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.List;
 
 public class Game {
     private String difficulty;
@@ -40,6 +41,11 @@ public class Game {
                 store.enter(player);
                 Store.storeMenu(scanner, store, player);
                 store.exit(player);
+            } else if (input.equals("2")){
+                List<Item> items = player.getItems();
+                for (Item item : items) {
+                    System.out.println(item.getName());
+                }
             } else if (input.equals("4")) {
                 gameStop();
                 break;
@@ -62,6 +68,9 @@ public class Game {
             while(file.hasNextLine()){
                 String data = file.nextLine();
                 String[] datasplit = data.split(" ");
+                if(datasplit[0].contains("_")){
+                    datasplit[0] = datasplit[0].substring(0, datasplit[0].indexOf("_")) + " " + datasplit[0].substring(datasplit[0].indexOf("_")+1, datasplit[0].length()); 
+                }
                 Item item = new Item(datasplit[0],Float.parseFloat(datasplit[1]));
                 store.addItem(item);
             }
