@@ -5,15 +5,17 @@ public class Main {
         Game game = new Game(true,300.0);
         game.gamePlay();
     }
-    public void exposeGameSetup(){
-        System.out.println("Makes difficulty NA for now Then makes store then calls makeItems then makes player");
+
+    public static void exposeGameSetup(){
+        System.out.println("Makes difficulty NA for now Then makes the store then calls makeItems then makes a player");
     }
 
-    public void exposeGamePlay(){
-        System.out.println("Shows the store inventory then allows the user to interacte with the store menu");
+    public static void exposeGamePlay(){
+        System.out.println("Shows the store inventory then allows the user to interact with the store menu");
     }
 
-    public void exposeGameStop(){
+    public static void exposeGameStop(){
         System.out.println("For now just prints exiting program");
     }
+
 }
