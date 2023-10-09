@@ -54,7 +54,11 @@ class Player {
     }
 
     public void relinquishItem(Item item){ 
-        inventory.remove(item);
+        if (getItemByName(item.getName())==null){
+            System.out.println("That item is not in your inventory");
+        } else {
+            inventory.remove(item);
+        }
     }
 
     public Item getItemByName(String name) {

@@ -52,6 +52,9 @@ public class Game {
                 player.unEquip(player.getItemByName(input));
             } else if (input.equals("7")) {
                 System.out.println(player);
+            } else if (input.equals("8")) {
+                input = scanner.nextLine();
+                player.relinquishItem(player.getItemByName(input));
             } else {
                 System.out.println("Invalid command!");
             }

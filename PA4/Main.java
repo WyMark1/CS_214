@@ -19,16 +19,4 @@ public class Main {
         System.out.println("For now just prints exiting program");
     }
 
-    public static void exposeCommonMethodConsume(){
-        System.out.println("It checks if the item is a potion or a food item and then calls drink if a potion and eat if a food item");
-    }
-
-    public static void exposeCommonMethodEquip(){
-        System.out.println("It checks if the item is Clothes or a Weapon the calls hold if it is a weapon and wear if it is clothes");
-    }
-
-    public static void exposeCommonMethodUse(){
-        System.out.println("It checks if the item is either somthing that can be consumed or equiped then calls the appropriate method. If neither then prints");
-    }
-
 }
