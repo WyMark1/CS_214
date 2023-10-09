@@ -83,17 +83,6 @@ class Player {
         return body;
     }
 
-    public List<Item> exposeWearInventory(){
-        return getItemsWorn();
-    }
-    public List<Item> exposeInventory(){
-        List<Item> fullInventory = inventory;
-        fullInventory.add(hand);
-        for (Item item : body){
-            fullInventory.add(item);
-        }
-        return fullInventory;
-    }
     public void Eat(Food item){
         item.eat(this);
     }
@@ -183,6 +172,75 @@ class Player {
         } else {
             System.out.println("You can't use that");
         }
+    }
+
+    public static void exposeCommonMethodConsume(){
+        System.out.println("It checks if the item is a potion or a food item and then calls drink if a potion and eat if a food item");
+    }
+
+    public static void exposeCommonMethodEquip(){
+        System.out.println("It checks if the item is Clothes or a Weapon the calls hold if it is a weapon and wear if it is clothes");
+    }
+
+    public static void exposeCommonMethodUse(){
+        System.out.println("It checks if the item is either somthing that can be consumed or equiped then calls the appropriate method. If neither then prints");
+    }
+
+    public List<Item> exposeWearInventory(){
+        return getItemsWorn();
+    }
+
+    public Item exposeHoldInventory(){
+        return hand;
+    }
+
+    public List<Item> exposeEatInventory(){
+        List<Item> EatInvent= new ArrayList<Item>();
+        for (Item item: inventory){
+            if(item instanceof Food){
+                EatInvent.add(item);
+            }
+        }
+        return EatInvent;
+    }
+
+    public List<Item> exposeDrinkInventory(){
+        List<Item> DrinkInvent= new ArrayList<Item>();
+        for (Item item: inventory){
+            if(item instanceof Potion){
+                DrinkInvent.add(item);
+            }
+        }
+        return DrinkInvent;
+    }
+
+    public List<Item> exposeConsumeInventory(){
+        List<Item> ConsumeInvent= new ArrayList<Item>();
+        for (Item item: inventory){
+            if(item instanceof Potion || item instanceof Food){
+                ConsumeInvent.add(item);
+            }
+        }
+        return ConsumeInvent;
+    }
+
+    public List<Item> exposeEquipInventory(){
+        List<Item> EquipInvent= new ArrayList<Item>();
+        for (Item item: inventory){
+            if(item instanceof Weapon || item instanceof Clothes){
+                EquipInvent.add(item);
+            }
+        }
+        return EquipInvent;
+    }
+
+    public List<Item> exposeInventory(){
+        List<Item> fullInventory = inventory;
+        fullInventory.add(hand);
+        for (Item item : body){
+            fullInventory.add(item);
+        }
+        return fullInventory;
     }
 
     @Override
