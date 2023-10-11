@@ -63,33 +63,33 @@ public class Store {
         return null; // Item not found in the player's inventory
     }
 
-    public boolean buyItem(Item item, Player player) {
+    public void buyItem(Item item, Player player) {
         if (check_player_in_store(player) == false){
             System.out.println("Player needs to enter the store before being able to buy anything");
-            return false;
         }
         
         if (inventory.contains(item)) {
             if (player.spendMoney(item.getPrice())) {
                 inventory.remove(item);
                 player.acquire(item);
-                return true;
+                System.out.println("Item purchased successfully!\nYou have: "+player.getMoney()+" gold left");
             }
         } else {
             System.out.println("Item not available in the store.");
+            System.out.println("Could not purchase the desired item.");
         }
-        return false;
     }
 
-    public boolean sellItem(Item item, Player player) {
+    public void sellItem(Item item, Player player) {
          if (check_player_in_store(player) == false){
             System.out.println("Player needs to enter the store before being able to sell anything");
-            return false;
+            
+        } else {
+            player.relinquishItem(item);
+            player.getMoney(item.getPrice());
+            inventory.add(item);
+            System.out.println("Item sold successfully!\nYou have: "+player.getMoney()+" gold left");
         }
-        player.relinquishItem(item);
-        player.getMoney(item.getPrice());
-        inventory.add(item);
-        return true;
     }
     
 
@@ -109,11 +109,7 @@ public class Store {
                 String itemName = scanner.nextLine();
                 Item item = store.getItemByName(itemName);
                 if (item != null) {
-                    if (store.buyItem(item, player)){
-                        System.out.println("Item purchased successfully!\nYou have: "+player.getMoney()+" gold left");
-                    } else {
-                        System.out.println("Could not purchase the desired item.");
-                    }
+                    store.buyItem(item, player);
                 } else {
                     System.out.println("Item not available in the store.");
                 }
@@ -124,7 +120,6 @@ public class Store {
                 Item item = player.getItemByName(itemName);
                 if (item != null) {
                     store.sellItem(item, player);
-                    System.out.println("Item sold successfully!\nYou have: "+player.getMoney()+" gold left");
                 } else {
                     System.out.println("Item not found in your inventory.");
                 }

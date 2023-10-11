@@ -194,8 +194,10 @@ class Player {
         return getItemsWorn();
     }
 
-    public Item exposeHoldInventory(){
-        return hand;
+    public List<Item> exposeHoldInventory(){
+        List<Item> temp = new ArrayList<Item>();
+        temp.add(hand);
+        return temp;
     }
 
     public List<Item> exposeEatInventory(){

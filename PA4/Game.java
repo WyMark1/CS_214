@@ -15,7 +15,7 @@ public class Game {
             makeItems(store);
         }
         player = new Player(startMoney);
-        player.acquire(new Item("NA", 100.0));
+        ///player.acquire(new Item("NA", 100.0));
     }
 
     public void gamePlay(){
