@@ -6,11 +6,18 @@ public class Store {
     private List<Item> inventory;
     private List<Player> players_in_store; 
     private Escrow escrow;
-    private int money;
-
-    public Store(int startMoney, Escrow escrow) {
+    private double money;
+    
+    public Store(double startMoney, Escrow escrow) {
         money = startMoney;
         this.escrow = escrow;
+        inventory = new ArrayList<>();
+        players_in_store = new ArrayList<>();
+    }
+
+    public Store(){
+        money = 0.0;
+        escrow = null;
         inventory = new ArrayList<>();
         players_in_store = new ArrayList<>();
     }
@@ -57,13 +64,12 @@ public class Store {
     }
 
     public Item getItemByName(String name) {
-        // Iterate through the player's items and return the item with the matching name
         for (Item item : inventory) {
             if (item.getName().equalsIgnoreCase(name)) {
                 return item;
             }
         }
-        return null; // Item not found in the player's inventory
+        return null;
     }
 
     public void buyItem(Item item, Player player) {
@@ -95,22 +101,32 @@ public class Store {
         }
     }
 
-    public void customerBuyUsingEscrow(Item item){
-        sellUsingEscrow(item);
+    public void customerBuyUsingEscrow(Item item, Player player){
+        sellUsingEscrow(item, player);
     }
 
-    public void sellUsingEscrow(Item item){
-        if(getItemByName(item.getName())!=null){
+    public void sellUsingEscrow(Item item, Player player){
+        if (check_player_in_store(player) == false){
+            System.out.println("Player needs to enter the store before being able to sell anything");
+            
+        } else if(getItemByName(item.getName())!=null){
             escrow.escrowItem(item);
-        }
-        else{
+            if (player.spendMoney(item.getPrice())) {
+                escrow.escrowMoney(item.getPrice());
+                finalizeEscrowBuy(player);
+            } else {
+                System.out.println("You don't have enough money to buy that!");
+            }
+        } else{
             System.out.println("That item dosen't exist!");
         }
     }
 
-    public void finalizeEscrowBuy(){
+    public void finalizeEscrowBuy(Player player){
         inventory.remove(escrow.returnItem());
         money = money + escrow.receiveMoney();
+        player.acquire(escrow.receiveItem());
+        System.out.println("Item purchased successfully!\nYou have: "+player.getMoney()+" gold left");
     }
 
     public static void storeMenu(Scanner scanner, Store store, Player player, Escrow escrow) {
@@ -130,6 +146,16 @@ public class Store {
                 Item item = store.getItemByName(itemName);
                 if (item != null) {
                     store.buyItem(item, player);
+                } else {
+                    System.out.println("Item not available in the store.");
+                }
+            } else if (input.equals("1+")) {
+                store.displayInventory();
+                System.out.println("Enter the name of the item you want to buy:");
+                String itemName = scanner.nextLine();
+                Item item = store.getItemByName(itemName);
+                if (item != null) {
+                    store.sellUsingEscrow(item, player);
                 } else {
                     System.out.println("Item not available in the store.");
                 }

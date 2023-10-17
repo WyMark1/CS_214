@@ -12,7 +12,7 @@ public class Game {
     public Game(boolean makeItems, double startMoney){
         difficulty  = "NA";
         escrow = new Escrow();
-        store = new Store(1000, escrow);
+        store = new Store(1000.0, escrow);
         if(makeItems){
             makeItems(store);
         }

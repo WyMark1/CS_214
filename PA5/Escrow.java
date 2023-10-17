@@ -1,13 +1,13 @@
 public class Escrow {
     private Item item;
-    private int funds;
+    private double funds;
 
     public Escrow(){
         item = null;
-        funds = 0;
+        funds = 0.0;
     }
 
-    public void requestMoney(int money){
+    public void requestMoney(double money){
         funds = money;
     }
 
@@ -15,21 +15,21 @@ public class Escrow {
         this.item = item;
     }
 
-    public void escrowMoney(int money){
+    public void escrowMoney(double money){
         funds = money;
     }
 
     public void escrowItem(Item item){
         this.item = item;
     }
-    public int returnMoney(){
+    public double returnMoney(){
         return funds;
     }
     public Item returnItem(){
         return item;
     }
-    public int receiveMoney(){
-        int ret = funds;
+    public double receiveMoney(){
+        double ret = funds;
         funds = 0;
         return ret;
     }

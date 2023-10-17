@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Game game = new Game(true,300.0);
+        Game game = new Game(true,100.0);
         game.gamePlay();
     }
 

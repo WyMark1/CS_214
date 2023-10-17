@@ -17,6 +17,7 @@ class Player {
         health = 100;
         armor = 0;
         damage = 0;
+        hand = null;
     }
 
     public double getMoney(){ 
@@ -73,9 +74,10 @@ class Player {
                 return item;
             }
         }
-        if (hand.getName().equalsIgnoreCase(name)) {
-                return hand;
-            }
+
+        if (hand != null && hand.getName().equalsIgnoreCase(name)){
+            return hand;
+        }
         return null; 
     }
 
