@@ -73,7 +73,7 @@ class Player {
                 return item;
             }
         }
-        if (hand.getName().equalsIgnoreCase(name)) {
+        if (hand != null && hand.getName().equalsIgnoreCase(name)) {
                 return hand;
             }
         return null; 
@@ -91,12 +91,12 @@ class Player {
         item.eat(this);
     }
 
-    public void EatItem(Item item){
+    public void Eat(Item item){
         if (item instanceof Food){
             Food food = (Food)item;
             food.eat(this);
         } else{
-            System.out.println("Can't be eaten");
+            System.out.println("You can't eat this");
         }
     }
 
@@ -104,7 +104,7 @@ class Player {
         item.drink(this);
     }
 
-    public void DrinkItem(Item item){
+    public void Drink(Item item){
         if (item instanceof Potion){
             Potion potion = (Potion)item;
             potion.drink(this);
@@ -119,6 +119,15 @@ class Player {
         inventory.remove(item);
     }
 
+    public void Wear(Item item){
+        if (item instanceof Clothes){
+            Clothes clothes = (Clothes)item;
+            Wear(clothes);
+        } else {
+            System.out.println("You can't wear this");
+        }
+    }
+
     public void Consume(Item item){
         if(item instanceof Potion){
             Drink((Potion)item);
@@ -131,7 +140,7 @@ class Player {
             System.out.println("You can't consume that");
         }
     }
-
+    
     public void Hold(Weapon item){ 
         if(hand == null){
             hand = item;
@@ -139,6 +148,15 @@ class Player {
             item.equip(this);
         } else{
             System.out.println("You are already holding something");
+        }
+    }
+
+    public void Hold(Item item){
+        if (item instanceof Weapon){
+            Weapon weapon = (Weapon)item;
+            Hold(weapon);
+        } else {
+            System.out.println("You can't Hold this");
         }
     }
 
@@ -191,12 +209,30 @@ class Player {
     }
 
     public List<Item> exposeWearInventory(){
-        return getItemsWorn();
+        List<Item> WearInvent= new ArrayList<Item>();
+        for (Item item: inventory){
+            if(item instanceof Clothes){
+                WearInvent.add(item);
+            }
+        }
+        if (body.size() > 0){
+            for (Item item: body){
+                WearInvent.add(item);
+            }
+        }
+        return WearInvent;
     }
 
     public List<Item> exposeHoldInventory(){
         List<Item> temp = new ArrayList<Item>();
-        temp.add(hand);
+        for (Item item: inventory){
+            if(item instanceof Weapon){
+                temp.add(item);
+            }
+        }
+        if (hand != null){
+            temp.add(hand);
+        }
         return temp;
     }
 
