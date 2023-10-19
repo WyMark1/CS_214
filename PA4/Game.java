@@ -46,7 +46,7 @@ public class Game {
             } else if (input.equals("5")) {
                 System.out.println("Write the name of the Item to be Equiped");
                 input = scanner.nextLine();
-                player.Equip(player.getItemByName(input));
+                player.Equip(player.getItemInInventory(input));
             } else if (input.equals("6")) {
                 System.out.println("Write the name of the Item to be unequiped");
                 input = scanner.nextLine();
