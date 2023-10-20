@@ -61,7 +61,46 @@ class Player {
         }
     }
 
-    public Item getItemByName(String name) {
+    public void sellUsingEscrow(Item item, Store store){
+        try {
+            if (getItemInInventory(item.getName()) == null){
+                throw new RuntimeException("You don't have that Item");
+            }
+            System.out.println("Sell using escrow");
+            Escrow.escrowItem(item);
+            inventory.remove(item);
+            store.customerSellUsingEscrow(this);
+            store.finalizeEscrowSell();
+            money += Escrow.receiveMoney();
+            System.out.println("Item sold successfully!\nYou have: "+money+" gold left");
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+            inventory.add(Escrow.receiveItem());
+        }
+    }
+
+    public void buyUsingEscrow(Item item, Store store){
+        double escrowMoney = 0;
+        try {
+            if (item.getPrice() > money){
+                throw new RuntimeException("You don't have enough money");
+            } else {
+                escrowMoney = item.getPrice();
+                money -= item.getPrice();
+            }
+            Escrow.escrowMoney(escrowMoney);
+            Escrow.requestItem(item);
+            store.customerBuyUsingEscrow(this);
+            acquire(Escrow.receiveItem());
+            store.finalizeEscrowBuy();
+            System.out.println("Item sold successfully!\nYou have: "+money+" gold left");
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+            money += Escrow.receiveMoney();
+        }
+    }
+
+    public Item getItemByName(String name){
         
         for (Item item : inventory) {
             if (item.getName().equalsIgnoreCase(name)) {
@@ -79,6 +118,15 @@ class Player {
         return null; 
     }
 
+    public Item getItemInInventory(String name){
+        for (Item item : inventory) {
+            if (item.getName().equalsIgnoreCase(name)) {
+                return item;
+            }
+        }
+        return null; 
+    }
+    
     public Item getHeldItem(){ 
         return hand;
     }
@@ -87,7 +135,7 @@ class Player {
         return body;
     }
 
-    public void Eat(Food item){
+    public void EatFood(Food item){
         item.eat(this);
     }
 
@@ -95,12 +143,13 @@ class Player {
         if (item instanceof Food){
             Food food = (Food)item;
             food.eat(this);
+            inventory.remove(item);
         } else{
             System.out.println("You can't eat this");
         }
     }
 
-    public void Drink(Potion item){
+    public void DrinkPotion(Potion item){
         item.drink(this);
     }
 
@@ -108,12 +157,13 @@ class Player {
         if (item instanceof Potion){
             Potion potion = (Potion)item;
             potion.drink(this);
+            inventory.remove(item);
         } else {
             System.out.println("You can't drink this");
         }
     }
 
-    public void Wear(Clothes item){ 
+    public void WearClothes(Clothes item){ 
         body.add(item);
         item.wear(this);
         inventory.remove(item);
@@ -122,7 +172,7 @@ class Player {
     public void Wear(Item item){
         if (item instanceof Clothes){
             Clothes clothes = (Clothes)item;
-            Wear(clothes);
+            WearClothes(clothes);
         } else {
             System.out.println("You can't wear this");
         }
@@ -130,18 +180,18 @@ class Player {
 
     public void Consume(Item item){
         if(item instanceof Potion){
-            Drink((Potion)item);
+            DrinkPotion((Potion)item);
             inventory.remove(item);
         }
         else if(item instanceof Food){
-            Eat((Food)item);
+            EatFood((Food)item);
             inventory.remove(item);
         } else {
             System.out.println("You can't consume that");
         }
     }
     
-    public void Hold(Weapon item){ 
+    public void HoldWeapon(Weapon item){ 
         if(hand == null){
             hand = item;
             inventory.remove(item);
@@ -154,7 +204,7 @@ class Player {
     public void Hold(Item item){
         if (item instanceof Weapon){
             Weapon weapon = (Weapon)item;
-            Hold(weapon);
+            HoldWeapon(weapon);
         } else {
             System.out.println("You can't Hold this");
         }
@@ -162,9 +212,9 @@ class Player {
 
     public void Equip(Item item){ 
         if(item instanceof Clothes){
-            Wear((Clothes)item);
+            WearClothes((Clothes)item);
         } else if(item instanceof Weapon){
-            Hold((Weapon)item);
+            HoldWeapon((Weapon)item);
         } else {
             System.out.println("You can't equip that");
         }

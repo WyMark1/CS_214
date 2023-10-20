@@ -7,12 +7,10 @@ public class Game {
     private String difficulty;
     private Store store;
     private Player player;
-    private Escrow escrow;
 
     public Game(boolean makeItems, double startMoney){
         difficulty  = "NA";
-        escrow = new Escrow();
-        store = new Store(1000.0, escrow);
+        store = new Store();
         if(makeItems){
             makeItems(store);
         }
@@ -31,7 +29,7 @@ public class Game {
 
             if (input.equals("1")) {
                 store.enter(player);
-                Store.storeMenu(scanner, store, player, escrow);
+                Store.storeMenu(scanner, store, player);
                 store.exit(player);
             } else if (input.equals("2")){
                 List<Item> inventory = player.getItems();
@@ -48,7 +46,7 @@ public class Game {
             } else if (input.equals("5")) {
                 System.out.println("Write the name of the Item to be Equiped");
                 input = scanner.nextLine();
-                player.Equip(player.getItemByName(input));
+                player.Equip(player.getItemInInventory(input));
             } else if (input.equals("6")) {
                 System.out.println("Write the name of the Item to be unequiped");
                 input = scanner.nextLine();
