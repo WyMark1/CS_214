@@ -234,6 +234,7 @@ public class Main {
                 } else {
                     System.out.println("Item not available in the store.");
                 }
+
             } else if (input.equals("2")) {
                 System.out.println("Enter the name of the item you want to sell:");
                 String itemName = scanner.nextLine();
@@ -244,6 +245,7 @@ public class Main {
                 } else {
                     System.out.println("Item not found in your inventory.");
                 }
+                
             } else if (input.equals("3")) {
                 store.displayInventory();
             } else if (input.equals("4")) {
