@@ -61,7 +61,7 @@ class Player {
         }
     }
 
-    public Item getItemByName(String name) {
+    public Item getItemByName(String name){
         
         for (Item item : inventory) {
             if (item.getName().equalsIgnoreCase(name)) {
@@ -79,7 +79,7 @@ class Player {
         return null; 
     }
 
-    public Item getItemInInventory(String name) {
+    public Item getItemInInventory(String name){
         for (Item item : inventory) {
             if (item.getName().equalsIgnoreCase(name)) {
                 return item;
@@ -96,10 +96,6 @@ class Player {
         return body;
     }
 
-    public void EatFood(Food item){
-        item.eat(this);
-    }
-
     public void Eat(Item item){
         if (item instanceof Food){
             Food food = (Food)item;
@@ -108,10 +104,6 @@ class Player {
         } else{
             System.out.println("You can't eat this");
         }
-    }
-
-    public void DrinkPotion(Potion item){
-        item.drink(this);
     }
 
     public void Drink(Item item){
@@ -124,10 +116,13 @@ class Player {
         }
     }
 
-    public void WearClothes(Clothes item){ 
-        body.add(item);
-        item.wear(this);
-        inventory.remove(item);
+    public void Hold(Item item){
+        if (item instanceof Weapon){
+            Weapon weapon = (Weapon)item;
+            HoldWeapon(weapon);
+        } else {
+            System.out.println("You can't Hold this");
+        }
     }
 
     public void Wear(Item item){
@@ -137,6 +132,20 @@ class Player {
         } else {
             System.out.println("You can't wear this");
         }
+    }
+
+    public void DrinkPotion(Potion item){
+        item.drink(this);
+    }
+
+    public void EatFood(Food item){
+        item.eat(this);
+    }
+
+    public void WearClothes(Clothes item){ 
+        body.add(item);
+        item.wear(this);
+        inventory.remove(item);
     }
 
     public void Consume(Item item){
@@ -159,15 +168,6 @@ class Player {
             item.equip(this);
         } else{
             System.out.println("You are already holding something");
-        }
-    }
-
-    public void Hold(Item item){
-        if (item instanceof Weapon){
-            Weapon weapon = (Weapon)item;
-            HoldWeapon(weapon);
-        } else {
-            System.out.println("You can't Hold this");
         }
     }
 
