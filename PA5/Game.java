@@ -39,14 +39,14 @@ public class Game {
             } else if (input.equals("3")){
                 System.out.println("Write the name of the Item to be consumed");
                 input = scanner.nextLine();
-                player.Consume(player.getItemByName(input));
+                player.consume(player.getItemByName(input));
             } else if (input.equals("4")) {
                 gameStop();
                 break;
             } else if (input.equals("5")) {
                 System.out.println("Write the name of the Item to be Equiped");
                 input = scanner.nextLine();
-                player.Equip(player.getItemInInventory(input));
+                player.equip(player.getItemInInventory(input));
             } else if (input.equals("6")) {
                 System.out.println("Write the name of the Item to be unequiped");
                 input = scanner.nextLine();

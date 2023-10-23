@@ -135,11 +135,11 @@ class Player {
         return body;
     }
 
-    public void EatFood(Food item){
+    public void eatFood(Food item){
         item.eat(this);
     }
 
-    public void Eat(Item item){
+    public void eat(Item item){
         if (item instanceof Food){
             Food food = (Food)item;
             food.eat(this);
@@ -149,11 +149,11 @@ class Player {
         }
     }
 
-    public void DrinkPotion(Potion item){
+    public void drinkPotion(Potion item){
         item.drink(this);
     }
 
-    public void Drink(Item item){
+    public void drink(Item item){
         if (item instanceof Potion){
             Potion potion = (Potion)item;
             potion.drink(this);
@@ -163,35 +163,35 @@ class Player {
         }
     }
 
-    public void WearClothes(Clothes item){ 
+    public void wearClothes(Clothes item){ 
         body.add(item);
         item.wear(this);
         inventory.remove(item);
     }
 
-    public void Wear(Item item){
+    public void wear(Item item){
         if (item instanceof Clothes){
             Clothes clothes = (Clothes)item;
-            WearClothes(clothes);
+            wearClothes(clothes);
         } else {
             System.out.println("You can't wear this");
         }
     }
 
-    public void Consume(Item item){
+    public void consume(Item item){
         if(item instanceof Potion){
-            DrinkPotion((Potion)item);
+            drinkPotion((Potion)item);
             inventory.remove(item);
         }
         else if(item instanceof Food){
-            EatFood((Food)item);
+            eatFood((Food)item);
             inventory.remove(item);
         } else {
             System.out.println("You can't consume that");
         }
     }
     
-    public void HoldWeapon(Weapon item){ 
+    public void holdWeapon(Weapon item){ 
         if(hand == null){
             hand = item;
             inventory.remove(item);
@@ -201,20 +201,20 @@ class Player {
         }
     }
 
-    public void Hold(Item item){
+    public void hold(Item item){
         if (item instanceof Weapon){
             Weapon weapon = (Weapon)item;
-            HoldWeapon(weapon);
+            holdWeapon(weapon);
         } else {
             System.out.println("You can't Hold this");
         }
     }
 
-    public void Equip(Item item){ 
+    public void equip(Item item){ 
         if(item instanceof Clothes){
-            WearClothes((Clothes)item);
+            wearClothes((Clothes)item);
         } else if(item instanceof Weapon){
-            HoldWeapon((Weapon)item);
+            holdWeapon((Weapon)item);
         } else {
             System.out.println("You can't equip that");
         }
@@ -236,11 +236,11 @@ class Player {
         }
     }
     
-    public void Use(Item item){
+    public void use(Item item){
         if(item instanceof Clothes || item instanceof Weapon){
-            Equip(item);
+            equip(item);
         } else if (item instanceof Potion || item instanceof Food){
-            Consume(item);
+            consume(item);
         } else {
             System.out.println("You can't use that");
         }
