@@ -1,11 +1,9 @@
 public class Potion extends Item{
     private String name;
-    private double price;
     
     public Potion(String name, double price){
         super(name,price);
         this.name = name;
-        this.price = price;
     }
 
     public void drink(Player player){
