@@ -15,6 +15,7 @@ public class Store {
     public void enter(Player player){
         if (check_player_in_store(player) == false){
             players_in_store.add(player);
+            player.changeLocation(this);
         } else {
             System.out.println("Player is already in the store.");
         }
@@ -90,20 +91,12 @@ public class Store {
         }
     }
 
-    public void customerBuyUsingEscrow(Player player){
-        if (check_player_in_store(player) == false){
-            throw new RuntimeException("Player needs to enter the store before being able to buy anything");
-        } else {
+    public void customerBuyUsingEscrow(){
             sellUsingEscrow();
-        }
     }
 
-    public void customerSellUsingEscrow(Player player){
-        if (check_player_in_store(player) == false){
-            throw new RuntimeException("Player needs to enter the store before being able to buy anything");
-        } else {
+    public void customerSellUsingEscrow(){
             buyUsingEscrow();
-        }
     }
 
     private void sellUsingEscrow(){

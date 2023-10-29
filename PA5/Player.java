@@ -9,6 +9,7 @@ class Player {
     public int health;
     public int armor;
     public int damage;
+    public Store location;
 
     public Player(double money){
         this.money = money;
@@ -17,6 +18,11 @@ class Player {
         health = 100;
         armor = 0;
         damage = 0;
+        location = null;
+    }
+
+    public void changeLocation(Store store){
+        location = store;
     }
 
     public double getMoney(){ 
@@ -69,7 +75,7 @@ class Player {
             System.out.println("Sell using escrow");
             Escrow.escrowItem(item);
             inventory.remove(item);
-            store.customerSellUsingEscrow(this);
+            store.customerSellUsingEscrow();
             store.finalizeEscrowSell();
             money += Escrow.receiveMoney();
             System.out.println("Item sold successfully!\nYou have: "+money+" gold left");
@@ -90,7 +96,7 @@ class Player {
             }
             Escrow.escrowMoney(escrowMoney);
             Escrow.requestItem(item);
-            store.customerBuyUsingEscrow(this);
+            store.customerBuyUsingEscrow();
             acquire(Escrow.receiveItem());
             store.finalizeEscrowBuy();
             System.out.println("Item sold successfully!\nYou have: "+money+" gold left");
