@@ -80,7 +80,7 @@ public class TestSetJunit4 {
         store.addItem(item);
         store.enter(player);
         double beforeBuy = player.getMoney();
-        player.buyUsingEscrow(item, store);
+        player.buyUsingEscrow(item);
         assertSame(item, player.getItemByName("player_item"));
         assertEquals(player.getMoney(), beforeBuy - item.getPrice(), 0.01);
     }
@@ -93,7 +93,7 @@ public class TestSetJunit4 {
         player.acquire(item);
         store.enter(player);
         double beforeSell = player.getMoney();
-        player.sellUsingEscrow(item, store);
+        player.sellUsingEscrow(item);
         assertSame(store.getItemByName(item.getName()), item);
         assertEquals(player.getMoney(), beforeSell + item.getPrice(), 0.01);
         assertNull(player.getItemByName("player_item"));
