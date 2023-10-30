@@ -75,8 +75,8 @@ class Player {
             System.out.println("Sell using escrow");
             Escrow.escrowItem(item);
             inventory.remove(item);
-            store.customerSellUsingEscrow();
-            store.finalizeEscrowSell();
+            location.customerSellUsingEscrow();
+            location.finalizeEscrowSell();
             money += Escrow.receiveMoney();
             System.out.println("Item sold successfully!\nYou have: "+money+" gold left");
         } catch (RuntimeException e) {
@@ -96,9 +96,9 @@ class Player {
             }
             Escrow.escrowMoney(escrowMoney);
             Escrow.requestItem(item);
-            store.customerBuyUsingEscrow();
+            location.customerBuyUsingEscrow();
             acquire(Escrow.receiveItem());
-            store.finalizeEscrowBuy();
+            location.finalizeEscrowBuy();
             System.out.println("Item sold successfully!\nYou have: "+money+" gold left");
         } catch (RuntimeException e) {
             System.out.println(e.getMessage());
