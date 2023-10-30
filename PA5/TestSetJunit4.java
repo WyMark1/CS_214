@@ -68,7 +68,7 @@ public class TestSetJunit4 {
         store.enter(player);
         store.buyItem(item, player);
         assertSame(item, player.getItemByName("player_item"));
-        player.Consume(item);
+        player.consume(item);
         assertNull(player.getItemByName("player_item"));
     }
 
