@@ -154,7 +154,7 @@ public class Store {
                 String itemName = scanner.nextLine();
                 Item item = store.getItemByName(itemName);
                 if (item != null) {
-                    player.buyUsingEscrow(item, store);
+                    player.buyUsingEscrow(item);
                 } else {
                     System.out.println("Item not available in the store.");
                 }
@@ -174,7 +174,7 @@ public class Store {
                 String itemName = scanner.nextLine();
                 Item item = player.getItemByName(itemName);
                 if (item != null) {
-                    player.sellUsingEscrow(item, store);
+                    player.sellUsingEscrow(item);
                 } else {
                     System.out.println("Item not found in your inventory.");
                 }
