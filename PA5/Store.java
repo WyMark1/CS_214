@@ -138,8 +138,7 @@ public class Store {
             System.out.println("4. Exit store");
 
             String input = scanner.nextLine();
-
-            if (input.equals("1")) {
+            if (input.equals("1+")) {
                 store.displayInventory();
                 System.out.println("Enter the name of the item you want to buy:");
                 String itemName = scanner.nextLine();
@@ -149,7 +148,7 @@ public class Store {
                 } else {
                     System.out.println("Item not available in the store.");
                 }
-            } else if (input.equals("1+")) {
+            } else if (input.equals("1")) {
                 store.displayInventory();
                 System.out.println("Enter the name of the item you want to buy:");
                 String itemName = scanner.nextLine();
@@ -160,7 +159,7 @@ public class Store {
                     System.out.println("Item not available in the store.");
                 }
 
-            } else if (input.equals("2")) {
+            } else if (input.equals("2+")) {
                 System.out.println("Enter the name of the item you want to sell:");
                 String itemName = scanner.nextLine();
                 Item item = player.getItemByName(itemName);
@@ -170,7 +169,7 @@ public class Store {
                     System.out.println("Item not found in your inventory.");
                 }
 
-            } else if (input.equals("2+")) {
+            } else if (input.equals("2")) {
                 System.out.println("Enter the name of the item you want to sell:");
                 String itemName = scanner.nextLine();
                 Item item = player.getItemByName(itemName);
