@@ -67,7 +67,7 @@ class Player {
         }
     }
 
-    public void sellUsingEscrow(Item item, Store store){
+    public void sellUsingEscrow(Item item){
         try {
             if (getItemInInventory(item.getName()) == null){
                 throw new RuntimeException("You don't have that Item");
@@ -85,7 +85,7 @@ class Player {
         }
     }
 
-    public void buyUsingEscrow(Item item, Store store){
+    public void buyUsingEscrow(Item item){
         double escrowMoney = 0;
         try {
             if (item.getPrice() > money){
