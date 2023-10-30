@@ -82,7 +82,7 @@ public class TestSetJunit5 {
         store.enter(player);
         store.buyItem(item, player);
         assertTrue(item == player.getItemByName("player_item"));
-        player.Consume(item);
+        player.consume(item);
         assertNull(player.getItemByName("player_item"));
     }
 
@@ -95,7 +95,7 @@ public class TestSetJunit5 {
         store.addItem(item);
         store.enter(player);
         double beforeBuy = player.getMoney();
-        player.buyUsingEscrow(item, store);
+        player.buyUsingEscrow(item);
         assertTrue(item == player.getItemByName("player_item"));
         assertTrue(player.getMoney() == beforeBuy - item.getPrice());
         assertTrue(player.getItemByName("player_item") != null);
@@ -110,7 +110,7 @@ public class TestSetJunit5 {
         player.acquire(item);
         store.enter(player);
         double beforeSell = player.getMoney();
-        player.sellUsingEscrow(item, store);
+        player.sellUsingEscrow(item);
         assertTrue(store.getItemByName(item.getName()) == item);
         assertTrue(player.getMoney() == beforeSell + item.getPrice());
         assertNull(player.getItemByName("player_item"));
