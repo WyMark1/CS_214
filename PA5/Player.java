@@ -74,14 +74,14 @@ class Player {
             }
             System.out.println("Sell using escrow");
             Escrow.escrowItem(item);
-            inventory.remove(item);
+            relinquishItem(item);
             location.customerSellUsingEscrow();
             location.finalizeEscrowSell();
             money += Escrow.receiveMoney();
             System.out.println("Item sold successfully!\nYou have: "+money+" gold left");
         } catch (RuntimeException e) {
             System.out.println(e.getMessage());
-            inventory.add(Escrow.receiveItem());
+            acquire(Escrow.receiveItem());
         }
     }
 
