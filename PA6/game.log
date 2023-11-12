@@ -1,24 +1,27 @@
-2023-11-07 12:46:14 DEBUG Log4jExample:10 - DEBUG!
-2023-11-07 12:46:14 INFO  Log4jExample:11 - INFO!!
-2023-11-07 12:46:14 WARN  Log4jExample:12 - WARNING!!!
-2023-11-07 12:46:14 FATAL Log4jExample:13 - FATAL!!!!
-2023-11-12 12:22:38 INFO  Main:11 - Game Ended
-2023-11-12 12:54:18 INFO  Player:106 - Buy Sucessful
-2023-11-12 12:54:18 INFO  Player:83 - Sell Sucessful
-2023-11-12 12:54:19 INFO  Player:106 - Buy Sucessful
-2023-11-12 12:54:19 INFO  Player:83 - Sell Sucessful
-2023-11-12 12:54:20 INFO  Game:22 - Game Started
-2023-11-12 12:54:32 INFO  Player:106 - Buy Sucessful
-2023-11-12 12:54:47 INFO  Player:83 - Sell Sucessful
-2023-11-12 12:55:20 INFO  Player:106 - Buy Sucessful
-2023-11-12 12:55:25 INFO  Player:106 - Buy Sucessful
-2023-11-12 12:55:30 INFO  Player:106 - Buy Sucessful
-2023-11-12 12:55:40 WARN  Player:109 - Buy Cancelled
-2023-11-12 12:55:56 INFO  Player:83 - Sell Sucessful
-2023-11-12 12:56:18 INFO  Main:11 - Game Ended
-2023-11-12 12:59:03 INFO  Player:106 - Buy Sucessful
-2023-11-12 12:59:03 INFO  Player:83 - Sell Sucessful
-2023-11-12 12:59:04 INFO  Player:106 - Buy Sucessful
-2023-11-12 12:59:04 INFO  Player:83 - Sell Sucessful
-2023-11-12 12:59:06 INFO  Game:22 - Game Started
-2023-11-12 12:59:08 INFO  Main:11 - Game Ended
+2023-11-12 13:05:20 INFO  Player:106 - Buy Sucessful: player_item, 1.0
+2023-11-12 13:05:20 INFO  Player:83 - Sell Sucessful: player_item, 1.0
+2023-11-12 13:05:22 INFO  Player:106 - Buy Sucessful: player_item, 1.0
+2023-11-12 13:05:22 INFO  Player:83 - Sell Sucessful: player_item, 1.0
+2023-11-12 13:05:23 INFO  Game:22 - Game Started
+2023-11-12 13:05:36 INFO  Player:106 - Buy Sucessful: Chestplate, 50.0
+2023-11-12 13:05:45 INFO  Player:106 - Buy Sucessful: Staff, 25.0
+2023-11-12 13:05:50 INFO  Player:106 - Buy Sucessful: Axe, 25.0
+2023-11-12 13:05:54 WARN  Player:109 - Buy Cancelled: Hat, 10.0
+2023-11-12 13:06:18 INFO  Player:83 - Sell Sucessful: Staff, 25.0
+2023-11-12 13:06:26 INFO  Player:83 - Sell Sucessful: Axe, 25.0
+2023-11-12 13:06:29 INFO  Main:11 - Game Ended
+2023-11-12 13:07:41 INFO  Player:106 - Buy Sucessful: player_item, 1.0
+2023-11-12 13:07:41 INFO  Player:83 - Sell Sucessful: player_item, 1.0
+2023-11-12 13:07:42 INFO  Player:106 - Buy Sucessful: player_item, 1.0
+2023-11-12 13:07:42 INFO  Player:83 - Sell Sucessful: player_item, 1.0
+2023-11-12 13:07:43 INFO  Game:22 - Game Started
+2023-11-12 13:07:53 INFO  Player:106 - Buy Sucessful: Shirt, 10.0
+2023-11-12 13:07:55 INFO  Main:11 - Game Ended
+2023-11-12 13:09:46 INFO  Player:106 - Buy Sucessful: player_item, 1.0
+2023-11-12 13:09:46 INFO  Player:83 - Sell Sucessful: player_item, 1.0
+2023-11-12 13:09:48 INFO  Player:106 - Buy Sucessful: player_item, 1.0
+2023-11-12 13:09:48 INFO  Player:83 - Sell Sucessful: player_item, 1.0
+2023-11-12 13:09:49 INFO  Game:22 - Game Started
+2023-11-12 13:10:00 INFO  Player:106 - Buy Sucessful: Pickaxe, 20.0
+2023-11-12 13:10:05 INFO  Player:83 - Sell Sucessful: Pickaxe, 20.0
+2023-11-12 13:10:09 INFO  Main:11 - Game Ended

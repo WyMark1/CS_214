@@ -123,4 +123,5 @@ public class TestSetJunit5 {
       Class.forName("org.apache.logging.log4j.Logger");
     }, "Could not find Log4j 2 Logger class");
   }
+  
 }

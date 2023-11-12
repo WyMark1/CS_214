@@ -80,10 +80,10 @@ class Player {
             location.customerSellUsingEscrow();
             location.finalizeEscrowSell();
             money += Escrow.receiveMoney();
-            logger.info("Sell Sucessful");
+            logger.info("Sell Sucessful: "+ item);
             System.out.println("Item sold successfully!\nYou have: "+money+" gold left");
         } catch (RuntimeException e) {
-            logger.warn("Sell Cancelled");
+            logger.warn("Sell Cancelled: "+ item);
             System.out.println(e.getMessage());
             acquire(Escrow.receiveItem());
         }
@@ -103,10 +103,10 @@ class Player {
             location.customerBuyUsingEscrow();
             acquire(Escrow.receiveItem());
             location.finalizeEscrowBuy();
-            logger.info("Buy Sucessful");
+            logger.info("Buy Sucessful: "+item);
             System.out.println("Item sold successfully!\nYou have: "+money+" gold left");
         } catch (RuntimeException e) {
-            logger.warn("Buy Cancelled");
+            logger.warn("Buy Cancelled: "+item);
             System.out.println(e.getMessage());
             money += Escrow.receiveMoney();
         }
