@@ -2,15 +2,15 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 public class Main {
-    static Logger logger = LogManager.getLogger(Log4jExample.class);  
+    private static final Logger logger = LogManager.getLogger(Main.class);  
 
     public static void main(String[] args) {
-        Game game = new Game(true,100.0);
+        Game game = new Game(true, 100.0);
         game.gamePlay();
-        logger.debug("DEBUG!");
-        logger.info("INFO!!");
-        logger.warn("WARNING!!!");
-        logger.fatal("FATAL!!!!");
+        //logger.debug("DEBUG!");
+        logger.info("Game Ended");
+        //logger.warn("WARNING!!!");
+        //logger.fatal("FATAL!!!!");
     }
 
     public static void exposeGameSetup(){

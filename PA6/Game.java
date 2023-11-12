@@ -1,9 +1,12 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.List;
 
 public class Game {
+    private static final Logger logger = LogManager.getLogger(Game.class);
     private String difficulty;
     private Store store;
     private Player player;
@@ -16,6 +19,7 @@ public class Game {
         }
         player = new Player(startMoney);
         ///player.acquire(new Item("NA", 100.0));
+        logger.info("Game Started");
     }
 
     public void gamePlay(){

@@ -1,7 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 class Player {
+    private static final Logger logger = LogManager.getLogger(Player.class);
     private List<Item> body;
     private Item hand; 
     private double money; 
@@ -77,8 +80,10 @@ class Player {
             location.customerSellUsingEscrow();
             location.finalizeEscrowSell();
             money += Escrow.receiveMoney();
+            logger.info("Sell Sucessful");
             System.out.println("Item sold successfully!\nYou have: "+money+" gold left");
         } catch (RuntimeException e) {
+            logger.warn("Sell Cancelled");
             System.out.println(e.getMessage());
             acquire(Escrow.receiveItem());
         }
@@ -98,8 +103,10 @@ class Player {
             location.customerBuyUsingEscrow();
             acquire(Escrow.receiveItem());
             location.finalizeEscrowBuy();
+            logger.info("Buy Sucessful");
             System.out.println("Item sold successfully!\nYou have: "+money+" gold left");
         } catch (RuntimeException e) {
+            logger.warn("Buy Cancelled");
             System.out.println(e.getMessage());
             money += Escrow.receiveMoney();
         }

@@ -20,6 +20,7 @@ public class TestSetJunit4 {
         item3 = new Item("test3", 1.0);
         player = new Player(100.0);
     }
+
     @Test
     public void testBuy() {
         store.addItem(item0);

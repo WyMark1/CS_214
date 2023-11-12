@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.lang.Exception;
@@ -115,4 +116,11 @@ public class TestSetJunit5 {
         assertTrue(player.getMoney() == beforeSell + item.getPrice());
         assertNull(player.getItemByName("player_item"));
     }
+
+    @Test
+    public void loggerAvailable() {
+        assertDoesNotThrow(() -> {
+      Class.forName("org.apache.logging.log4j.Logger");
+    }, "Could not find Log4j 2 Logger class");
+  }
 }
