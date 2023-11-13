@@ -25,3 +25,34 @@
 2023-11-12 13:10:00 INFO  Player:106 - Buy Sucessful: Pickaxe, 20.0
 2023-11-12 13:10:05 INFO  Player:83 - Sell Sucessful: Pickaxe, 20.0
 2023-11-12 13:10:09 INFO  Main:11 - Game Ended
+2023-11-13 08:13:27 INFO  Player:57 - Acquired: player_item, 1.0
+2023-11-13 08:13:27 INFO  Player:70 - Relinquished: player_item, 1.0
+2023-11-13 08:13:27 INFO  Player:57 - Acquired: test0, 1.0
+2023-11-13 08:13:27 INFO  Player:57 - Acquired: test1, 1.0
+2023-11-13 08:13:27 INFO  Player:57 - Acquired: test2, 1.0
+2023-11-13 08:13:27 INFO  Player:57 - Acquired: test3, 1.0
+2023-11-13 08:13:27 INFO  Player:57 - Acquired: player_item, 1.0
+2023-11-13 08:13:27 INFO  Player:57 - Acquired: player_item, 1.0
+2023-11-13 08:13:27 INFO  Player:70 - Relinquished: player_item, 1.0
+2023-11-13 08:13:27 INFO  Player:57 - Acquired: player_item, 1.0
+2023-11-13 08:13:27 INFO  Player:70 - Relinquished: player_item, 1.0
+2023-11-13 08:13:27 INFO  Player:57 - Acquired: player_item, 1.0
+2023-11-13 08:13:29 INFO  Player:57 - Acquired: player_item, 1.0
+2023-11-13 08:13:29 INFO  Player:70 - Relinquished: player_item, 1.0
+2023-11-13 08:13:29 INFO  Player:57 - Acquired: player_item, 1.0
+2023-11-13 08:13:29 INFO  Player:57 - Acquired: player_item, 1.0
+2023-11-13 08:13:29 INFO  Player:70 - Relinquished: player_item, 1.0
+2023-11-13 08:13:29 INFO  Player:57 - Acquired: test0, 1.0
+2023-11-13 08:13:29 INFO  Player:57 - Acquired: test1, 1.0
+2023-11-13 08:13:29 INFO  Player:57 - Acquired: test2, 1.0
+2023-11-13 08:13:29 INFO  Player:57 - Acquired: test3, 1.0
+2023-11-13 08:13:29 INFO  Player:57 - Acquired: player_item, 1.0
+2023-11-13 08:13:29 INFO  Player:70 - Relinquished: player_item, 1.0
+2023-11-13 08:13:29 INFO  Player:57 - Acquired: player_item, 1.0
+2023-11-13 08:13:30 INFO  Game:22 - Game Started
+2023-11-13 08:13:36 INFO  Player:57 - Acquired: Hat, 10.0
+2023-11-13 08:13:45 INFO  Player:57 - Acquired: Shirt, 10.0
+2023-11-13 08:13:49 INFO  Player:57 - Acquired: Staff, 25.0
+2023-11-13 08:13:57 INFO  Player:57 - Acquired: Broad Sword, 25.0
+2023-11-13 08:14:03 INFO  Player:70 - Relinquished: Staff, 25.0
+2023-11-13 08:14:11 INFO  Main:11 - Game Ended

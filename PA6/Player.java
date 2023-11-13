@@ -54,6 +54,7 @@ class Player {
     }
 
     public void acquire(Item item){ 
+        logger.info("Acquired: "+item);
         inventory.add(item);
     }
 
@@ -66,6 +67,7 @@ class Player {
         if (getItemByName(item.getName())==null){
             System.out.println("That item is not in your inventory");
         } else {
+            logger.info("Relinquished: "+ item);
             inventory.remove(item);
         }
     }
@@ -80,7 +82,6 @@ class Player {
             location.customerSellUsingEscrow();
             location.finalizeEscrowSell();
             money += Escrow.receiveMoney();
-            logger.info("Sell Sucessful: "+ item);
             System.out.println("Item sold successfully!\nYou have: "+money+" gold left");
         } catch (RuntimeException e) {
             logger.warn("Sell Cancelled: "+ item);
@@ -103,7 +104,6 @@ class Player {
             location.customerBuyUsingEscrow();
             acquire(Escrow.receiveItem());
             location.finalizeEscrowBuy();
-            logger.info("Buy Sucessful: "+item);
             System.out.println("Item sold successfully!\nYou have: "+money+" gold left");
         } catch (RuntimeException e) {
             logger.warn("Buy Cancelled: "+item);
