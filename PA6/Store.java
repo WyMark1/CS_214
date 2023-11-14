@@ -1,8 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Store {
+    private static final Logger logger = LogManager.getLogger(Store.class);
     private List<Item> inventory;
     private List<Player> players_in_store; 
     double money = 1000000;
@@ -102,6 +105,7 @@ public class Store {
     private void sellUsingEscrow(){
         if(getItemByName(Escrow.requestItem.getName())!=null){
             if(Escrow.requestItem.getPrice() <= Escrow.returnMoney()){
+                logger.info("Store sold: "+ Escrow.requestItem);
                 Escrow.escrowItem(Escrow.requestItem);
             } else {
                 throw new RuntimeException("You don't have enough money");
@@ -113,6 +117,7 @@ public class Store {
 
     private void buyUsingEscrow(){
         if(Escrow.returnItem().getPrice() <= money){
+            logger.info("Store bought: "+ Escrow.returnItem());
             Escrow.escrowMoney(Escrow.returnItem().getPrice());
             money -= Escrow.returnItem().getPrice();
         } else {
