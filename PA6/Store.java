@@ -103,7 +103,7 @@ public class Store {
     }
 
     private void sellUsingEscrow(){
-        if(getItemByName(Escrow.requestItem.getName())!=null){
+        if(getItemByName(Escrow.requestItem.getName()) != null){
             if(Escrow.requestItem.getPrice() <= Escrow.returnMoney()){
                 logger.info("Store sold: "+ Escrow.requestItem);
                 Escrow.escrowItem(Escrow.requestItem);

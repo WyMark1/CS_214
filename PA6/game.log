@@ -90,3 +90,39 @@
 2023-11-14 09:44:50 INFO  Player:70 - Relinquished: Hat, 10.0
 2023-11-14 09:44:50 INFO  Store:120 - Store bought: Hat, 10.0
 2023-11-14 09:45:02 INFO  Main:11 - Game Ended
+2023-11-14 09:49:05 INFO  Player:57 - Acquired: player_item, 1.0
+2023-11-14 09:49:05 INFO  Player:70 - Relinquished: player_item, 1.0
+2023-11-14 09:49:05 INFO  Player:57 - Acquired: test0, 1.0
+2023-11-14 09:49:05 INFO  Player:57 - Acquired: test1, 1.0
+2023-11-14 09:49:05 INFO  Player:57 - Acquired: test2, 1.0
+2023-11-14 09:49:05 INFO  Player:57 - Acquired: test3, 1.0
+2023-11-14 09:49:05 INFO  Store:108 - Store sold: player_item, 1.0
+2023-11-14 09:49:05 INFO  Player:57 - Acquired: player_item, 1.0
+2023-11-14 09:49:05 INFO  Player:57 - Acquired: player_item, 1.0
+2023-11-14 09:49:05 INFO  Player:70 - Relinquished: player_item, 1.0
+2023-11-14 09:49:05 INFO  Store:120 - Store bought: player_item, 1.0
+2023-11-14 09:49:05 INFO  Player:57 - Acquired: player_item, 1.0
+2023-11-14 09:49:05 INFO  Player:70 - Relinquished: player_item, 1.0
+2023-11-14 09:49:05 INFO  Player:57 - Acquired: player_item, 1.0
+2023-11-14 09:49:07 INFO  Player:57 - Acquired: player_item, 1.0
+2023-11-14 09:49:07 INFO  Player:70 - Relinquished: player_item, 1.0
+2023-11-14 09:49:07 INFO  Store:108 - Store sold: player_item, 1.0
+2023-11-14 09:49:07 INFO  Player:57 - Acquired: player_item, 1.0
+2023-11-14 09:49:07 INFO  Player:57 - Acquired: player_item, 1.0
+2023-11-14 09:49:07 INFO  Player:70 - Relinquished: player_item, 1.0
+2023-11-14 09:49:07 INFO  Store:120 - Store bought: player_item, 1.0
+2023-11-14 09:49:07 INFO  Player:57 - Acquired: test0, 1.0
+2023-11-14 09:49:07 INFO  Player:57 - Acquired: test1, 1.0
+2023-11-14 09:49:07 INFO  Player:57 - Acquired: test2, 1.0
+2023-11-14 09:49:07 INFO  Player:57 - Acquired: test3, 1.0
+2023-11-14 09:49:07 INFO  Player:57 - Acquired: player_item, 1.0
+2023-11-14 09:49:07 INFO  Player:70 - Relinquished: player_item, 1.0
+2023-11-14 09:49:07 INFO  Player:57 - Acquired: player_item, 1.0
+2023-11-14 09:49:08 INFO  Game:22 - Game Started
+2023-11-14 09:49:15 INFO  Store:108 - Store sold: Hat, 10.0
+2023-11-14 09:49:15 INFO  Player:57 - Acquired: Hat, 10.0
+2023-11-14 09:49:20 INFO  Store:108 - Store sold: Chestplate, 50.0
+2023-11-14 09:49:20 INFO  Player:57 - Acquired: Chestplate, 50.0
+2023-11-14 09:49:26 INFO  Player:70 - Relinquished: Hat, 10.0
+2023-11-14 09:49:26 INFO  Store:120 - Store bought: Hat, 10.0
+2023-11-14 09:49:28 INFO  Main:11 - Game Ended
