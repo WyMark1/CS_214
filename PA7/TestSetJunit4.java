@@ -3,6 +3,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import static org.junit.Assert.*;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 @RunWith(JUnit4.class)
 public class TestSetJunit4 {
     static Store store;
@@ -36,6 +39,32 @@ public class TestSetJunit4 {
         assertSame(item1, player.getItemByName("test1"));
         assertSame(item2, player.getItemByName("test2"));
     }
+
+    @Test
+    public void testPlayerCantBuy() {
+        Store store = new Store();
+        Player player = new Player(100.0);
+        Item item = new Item("player_item", 1.0);
+        store.enter(player);
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        store.buyItem(item, player);
+        String expected = "Item not available in the store.\nCould not purchase the desired item.";
+        assertTrue(outContent.toString().contains(expected));
+    }
+
+    @Test
+    public void testBuyNotInStore() {
+        Store store = new Store();
+        Player player = new Player(100.0);
+        Item item = new Item("player_item", 1.0);
+        store.addItem(item);
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        store.buyItem(item, player);
+        assertTrue(outContent.toString().contains("Player needs to enter the store before being able to buy anything"));
+    }
+
     @Test
     public void testPlayerCanSell() {
         Store store = new Store();
@@ -46,6 +75,18 @@ public class TestSetJunit4 {
         store.enter(player);
         store.sellItem(item, player);
         assertNull(player.getItemByName("player_item"));
+    }
+
+    @Test
+    public void testPlayerCantSell() {
+        Store store = new Store();
+        Player player = new Player(100.0);
+        Item item = new Item("player_item", 1.0);
+        player.acquire(item);
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        store.sellItem(item, player);
+        assertTrue(outContent.toString().contains("Player needs to enter the store before being able to sell anything"));
     }
 
     @Test
@@ -87,6 +128,35 @@ public class TestSetJunit4 {
     }
 
     @Test
+    public void buyEscrowNoMoney() {
+        Store store = new Store();
+        Player player = new Player(100.0);
+        Item item = new Potion("player_item", 1000.0);
+        store.addItem(item);
+        store.enter(player);
+        double beforeBuy = player.getMoney();
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        player.buyUsingEscrow(item);
+        assertTrue(outContent.toString().contains("You don't have enough money"));
+        assertEquals(beforeBuy, player.getMoney(), 0.01);
+    }
+
+    @Test
+    public void buyEscrowNoItem() {
+        Store store = new Store();
+        Player player = new Player(100.0);
+        Item item = new Potion("player_item", 10.0);
+        store.enter(player);
+        double beforeBuy = player.getMoney();
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        player.buyUsingEscrow(item);
+        assertTrue(outContent.toString().contains("That item dosen't exist!"));
+        assertEquals(beforeBuy, player.getMoney(), 0.01);
+    }
+
+    @Test
     public void sellEscrow() {
         Store store = new Store();
         Player player = new Player(100.0);
@@ -98,5 +168,33 @@ public class TestSetJunit4 {
         assertSame(store.getItemByName(item.getName()), item);
         assertEquals(player.getMoney(), beforeSell + item.getPrice(), 0.01);
         assertNull(player.getItemByName("player_item"));
+    }
+
+    @Test
+    public void sellEscrowNoItem() {
+        Store store = new Store();
+        Player player = new Player(100.0);
+        Item item = new Potion("player_item", 1.0);
+        store.enter(player);
+        double beforeSell = player.getMoney();
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        player.sellUsingEscrow(item);
+        assertTrue(outContent.toString().contains("You don't have that Item"));
+    }
+
+    @Test
+    public void sellEscrowNoMoney() {
+        Store store = new Store(100.0);
+        Player player = new Player(100.0);
+        Item item = new Potion("player_item", 1000.0);
+        player.acquire(item);
+        store.enter(player);
+        double beforeSell = player.getMoney();
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        player.sellUsingEscrow(item);
+        assertTrue(outContent.toString().contains("The store doesn't have enough money"));
+        assertTrue(player.getItemByName(item.getName()) != null);
     }
 }

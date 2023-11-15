@@ -2,7 +2,7 @@
 
 # Set this variable to the name of the Main class (there should be no Java package use at this time, we have other plans for using Java packages)
 # Default: Main
-MAIN_CLASS_NAME := Main 
+MAIN_CLASS_NAME := Main
 
 # JUnit test class names including package (if declared)
 JUNIT4_TEST_CLASS_NAME := TestSetJunit4

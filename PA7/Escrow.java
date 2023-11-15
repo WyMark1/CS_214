@@ -30,8 +30,8 @@ public class Escrow {
     }
 
     public static Item receiveItem(){
-       Item ret = escrowItem;
-       escrowItem = null;
+        Item ret = escrowItem;
+        escrowItem = null;
         return ret;
     }
         

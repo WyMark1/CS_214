@@ -15,6 +15,12 @@ public class Store {
         players_in_store = new ArrayList<>();
     }
 
+    public Store(double money){
+        inventory = new ArrayList<>();
+        players_in_store = new ArrayList<>();
+        this.money = money;
+    }
+
     public void enter(Player player){
         if (check_player_in_store(player) == false){
             players_in_store.add(player);
@@ -68,9 +74,7 @@ public class Store {
     public void buyItem(Item item, Player player) {
         if (check_player_in_store(player) == false){
             System.out.println("Player needs to enter the store before being able to buy anything");
-        }
-        
-        if (inventory.contains(item)) {
+        } else if (inventory.contains(item)) {
             if (player.spendMoney(item.getPrice())) {
                 inventory.remove(item);
                 player.acquire(item);
@@ -107,9 +111,7 @@ public class Store {
             if(Escrow.requestItem.getPrice() <= Escrow.returnMoney()){
                 logger.info("Store sold: "+ Escrow.requestItem);
                 Escrow.escrowItem(Escrow.requestItem);
-            } else {
-                throw new RuntimeException("You don't have enough money");
-            }
+            } 
         } else{
             throw new RuntimeException("That item dosen't exist!");
         }

@@ -86,7 +86,8 @@ class Player {
         } catch (RuntimeException e) {
             logger.warn("Sell Cancelled: "+ item);
             System.out.println(e.getMessage());
-            acquire(Escrow.receiveItem());
+            if (Escrow.returnItem() != null)
+                acquire(Escrow.receiveItem());
         }
     }
 
