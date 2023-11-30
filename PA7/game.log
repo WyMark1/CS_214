@@ -627,3 +627,107 @@
 2023-11-15 10:22:51 INFO  Player:57 - Acquired: player_item, 1.0
 2023-11-15 10:22:52 INFO  Game:22 - Game Started
 2023-11-15 10:22:54 INFO  Main:11 - Game Ended
+2023-11-30 09:18:05 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:18:05 INFO  Player:71 - Relinquished: player_item, 1.0
+2023-11-30 09:18:05 INFO  Player:58 - Acquired: test0, 1.0
+2023-11-30 09:18:05 INFO  Player:58 - Acquired: test1, 1.0
+2023-11-30 09:18:05 INFO  Player:58 - Acquired: test2, 1.0
+2023-11-30 09:18:05 INFO  Player:58 - Acquired: test3, 1.0
+2023-11-30 09:18:05 INFO  Store:112 - Store sold: player_item, 1.0
+2023-11-30 09:18:05 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:18:05 WARN  Player:111 - Buy Cancelled: player_item, 1000.0
+2023-11-30 09:18:05 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:18:05 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:18:05 INFO  Player:71 - Relinquished: player_item, 1.0
+2023-11-30 09:18:05 INFO  Store:122 - Store bought: player_item, 1.0
+2023-11-30 09:18:05 INFO  Player:58 - Acquired: player_item, 1000.0
+2023-11-30 09:18:05 INFO  Player:71 - Relinquished: player_item, 1000.0
+2023-11-30 09:18:05 WARN  Player:88 - Sell Cancelled: player_item, 1000.0
+2023-11-30 09:18:05 INFO  Player:58 - Acquired: player_item, 1000.0
+2023-11-30 09:18:05 WARN  Player:111 - Buy Cancelled: player_item, 10.0
+2023-11-30 09:18:05 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:18:05 INFO  Player:58 - Acquired: player_item2, 1.0
+2023-11-30 09:18:05 INFO  Player:58 - Acquired: player_item3, 1.0
+2023-11-30 09:18:05 INFO  Player:71 - Relinquished: player_item, 1.0
+2023-11-30 09:18:05 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:18:05 WARN  Player:88 - Sell Cancelled: player_item, 1.0
+2023-11-30 09:19:48 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:19:48 INFO  Player:71 - Relinquished: player_item, 1.0
+2023-11-30 09:19:48 INFO  Player:58 - Acquired: test0, 1.0
+2023-11-30 09:19:48 INFO  Player:58 - Acquired: test1, 1.0
+2023-11-30 09:19:48 INFO  Player:58 - Acquired: test2, 1.0
+2023-11-30 09:19:48 INFO  Player:58 - Acquired: test3, 1.0
+2023-11-30 09:19:48 INFO  Store:112 - Store sold: player_item, 1.0
+2023-11-30 09:19:48 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:19:48 WARN  Player:111 - Buy Cancelled: player_item, 1000.0
+2023-11-30 09:19:48 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:19:48 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:19:48 INFO  Player:71 - Relinquished: player_item, 1.0
+2023-11-30 09:19:48 INFO  Store:122 - Store bought: player_item, 1.0
+2023-11-30 09:19:48 INFO  Player:58 - Acquired: player_item, 1000.0
+2023-11-30 09:19:48 INFO  Player:71 - Relinquished: player_item, 1000.0
+2023-11-30 09:19:48 WARN  Player:88 - Sell Cancelled: player_item, 1000.0
+2023-11-30 09:19:48 INFO  Player:58 - Acquired: player_item, 1000.0
+2023-11-30 09:19:48 WARN  Player:111 - Buy Cancelled: player_item, 10.0
+2023-11-30 09:19:48 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:19:48 INFO  Player:58 - Acquired: player_item2, 1.0
+2023-11-30 09:19:48 INFO  Player:58 - Acquired: player_item3, 1.0
+2023-11-30 09:19:48 INFO  Player:71 - Relinquished: player_item, 1.0
+2023-11-30 09:19:48 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:19:48 WARN  Player:88 - Sell Cancelled: player_item, 1.0
+2023-11-30 09:19:50 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:19:50 INFO  Player:71 - Relinquished: player_item, 1.0
+2023-11-30 09:19:50 INFO  Store:112 - Store sold: player_item, 1.0
+2023-11-30 09:19:50 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:19:50 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:19:50 INFO  Player:71 - Relinquished: player_item, 1.0
+2023-11-30 09:19:50 INFO  Store:122 - Store bought: player_item, 1.0
+2023-11-30 09:19:50 INFO  Player:58 - Acquired: test0, 1.0
+2023-11-30 09:19:50 INFO  Player:58 - Acquired: test1, 1.0
+2023-11-30 09:19:50 INFO  Player:58 - Acquired: test2, 1.0
+2023-11-30 09:19:50 INFO  Player:58 - Acquired: test3, 1.0
+2023-11-30 09:19:50 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:19:50 INFO  Player:71 - Relinquished: player_item, 1.0
+2023-11-30 09:19:50 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:19:51 INFO  Game:22 - Game Started
+2023-11-30 09:19:54 INFO  Main:11 - Game Ended
+2023-11-30 09:25:09 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:25:09 INFO  Player:71 - Relinquished: player_item, 1.0
+2023-11-30 09:25:09 INFO  Player:58 - Acquired: test0, 1.0
+2023-11-30 09:25:09 INFO  Player:58 - Acquired: test1, 1.0
+2023-11-30 09:25:09 INFO  Player:58 - Acquired: test2, 1.0
+2023-11-30 09:25:09 INFO  Player:58 - Acquired: test3, 1.0
+2023-11-30 09:25:09 INFO  Store:112 - Store sold: player_item, 1.0
+2023-11-30 09:25:09 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:25:09 WARN  Player:111 - Buy Cancelled: player_item, 1000.0
+2023-11-30 09:25:09 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:25:09 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:25:09 INFO  Player:71 - Relinquished: player_item, 1.0
+2023-11-30 09:25:09 INFO  Store:122 - Store bought: player_item, 1.0
+2023-11-30 09:25:09 INFO  Player:58 - Acquired: player_item, 1000.0
+2023-11-30 09:25:09 INFO  Player:71 - Relinquished: player_item, 1000.0
+2023-11-30 09:25:09 WARN  Player:88 - Sell Cancelled: player_item, 1000.0
+2023-11-30 09:25:09 INFO  Player:58 - Acquired: player_item, 1000.0
+2023-11-30 09:25:09 WARN  Player:111 - Buy Cancelled: player_item, 10.0
+2023-11-30 09:25:09 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:25:09 INFO  Player:58 - Acquired: player_item2, 1.0
+2023-11-30 09:25:09 INFO  Player:58 - Acquired: player_item3, 1.0
+2023-11-30 09:25:09 INFO  Player:71 - Relinquished: player_item, 1.0
+2023-11-30 09:25:09 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:25:09 WARN  Player:88 - Sell Cancelled: player_item, 1.0
+2023-11-30 09:25:11 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:25:11 INFO  Player:71 - Relinquished: player_item, 1.0
+2023-11-30 09:25:11 INFO  Store:112 - Store sold: player_item, 1.0
+2023-11-30 09:25:11 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:25:11 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:25:11 INFO  Player:71 - Relinquished: player_item, 1.0
+2023-11-30 09:25:11 INFO  Store:122 - Store bought: player_item, 1.0
+2023-11-30 09:25:11 INFO  Player:58 - Acquired: test0, 1.0
+2023-11-30 09:25:11 INFO  Player:58 - Acquired: test1, 1.0
+2023-11-30 09:25:11 INFO  Player:58 - Acquired: test2, 1.0
+2023-11-30 09:25:11 INFO  Player:58 - Acquired: test3, 1.0
+2023-11-30 09:25:11 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:25:11 INFO  Player:71 - Relinquished: player_item, 1.0
+2023-11-30 09:25:11 INFO  Player:58 - Acquired: player_item, 1.0
+2023-11-30 09:25:12 INFO  Game:22 - Game Started
+2023-11-30 09:25:14 INFO  Main:11 - Game Ended

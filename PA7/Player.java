@@ -41,6 +41,7 @@ class Player {
             this.money -= price;
             return true;
         }
+        System.out.println("Not enough money!");
         return false;
     }
 

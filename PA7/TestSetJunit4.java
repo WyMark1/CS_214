@@ -54,6 +54,19 @@ public class TestSetJunit4 {
     }
 
     @Test
+    public void testPlayerCantBuyNoMoney() {
+        Store store = new Store();
+        Player player = new Player(0);
+        Item item = new Item("player_item", 1.0);
+        player.spendMoney(1);
+        store.enter(player);
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        store.buyItem(item, player);
+        assertNull(player.getItemByName("player_item"));
+    }
+
+    @Test
     public void testBuyNotInStore() {
         Store store = new Store();
         Player player = new Player(100.0);
@@ -70,7 +83,19 @@ public class TestSetJunit4 {
         Store store = new Store();
         Player player = new Player(100.0);
         Item item = new Item("player_item", 1.0);
+        Item item4 = new Item("player_item4", 1.0);
+        Clothes item2 = new Clothes("player_item2", 1.0, 10);
+        Weapon item3 = new Weapon("player_item3", 1.0, 10);
         player.acquire(item);
+        player.acquire(item2);
+        player.acquire(item3);
+        player.equip(item2);
+        player.equip(item3);
+        player.getItemByName("player_item");
+        player.getItemByName("player_item2");
+        player.getItemByName("player_item3");
+        player.getItemByName("player_item4");
+        player.relinquishItem(item4);
         assertSame(item, player.getItemByName("player_item"));
         store.enter(player);
         store.sellItem(item, player);
@@ -120,6 +145,7 @@ public class TestSetJunit4 {
         Player player = new Player(100.0);
         Item item = new Potion("player_item", 1.0);
         store.addItem(item);
+        store.getItemByName("null");
         store.enter(player);
         double beforeBuy = player.getMoney();
         player.buyUsingEscrow(item);
@@ -162,6 +188,7 @@ public class TestSetJunit4 {
         Player player = new Player(100.0);
         Item item = new Potion("player_item", 1.0);
         player.acquire(item);
+        player.getItemInInventory("NUll");
         store.enter(player);
         double beforeSell = player.getMoney();
         player.sellUsingEscrow(item);
